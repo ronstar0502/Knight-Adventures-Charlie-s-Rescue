@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] int value;
     void Start()
     {
         
@@ -14,5 +14,10 @@ public class Coin : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int GetValue()
+    {
+        return value;
     }
 }

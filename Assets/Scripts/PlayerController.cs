@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float horizontalInput, jumpInput;
     private bool onFloor;
+    private int coins;
+    [SerializeField] private float health = 3;
     [SerializeField] private float moveSpeed, jumpForce;
     [SerializeField] private float damping = 0.25f;
 
@@ -49,13 +52,27 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Collectable"))
         {
-            //Gain Score
+            Coin coin = other.gameObject.GetComponent<Coin>();
+            coins += coin.GetValue();
+            Destroy(coin.gameObject);
         }
     }
 
-
-    internal void RestartLevel()
+    public void TakeDamage(float damage)
     {
+        if (health - damage <= 0)
+        {
+            health = 0;
+            RestartLevel();
+        }
+        else
+        {
+            health-=damage;
+        }
         
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
