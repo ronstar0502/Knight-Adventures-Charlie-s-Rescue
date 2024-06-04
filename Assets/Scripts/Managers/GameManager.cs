@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TMP_Text scoreText;
+    private PlayerController player;
+
+    private void Awake()
     {
-        
+        player = FindObjectOfType<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = $"Score: {player.score}";
     }
 }
