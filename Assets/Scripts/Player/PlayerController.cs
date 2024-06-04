@@ -8,31 +8,44 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    private float horizontalInput, jumpInput;
+    private Animator animator;
+    private float horizontalInput;
     private bool onFloor;
     public int score;
     [SerializeField] private float health = 3;
     [SerializeField] private float moveSpeed, jumpForce;
     [SerializeField] private float damping = 0.25f;
 
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float checkRadius;
+    [SerializeField] private LayerMask whatIsGround;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
     }
     private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        jumpInput = Input.GetAxis("Jump");
-        FlipPlayerDirection();
-        /*if(onFloor && horizontalInput != 0)
+        /*horizontalInput = Input.GetAxis("Horizontal");
+        if(onFloor && horizontalInput != 0)
         {
             rb.velocity = new Vector2(horizontalInput*moveSpeed,rb.velocity.y);
-        }*/
+        }
         if (jumpInput != 0 && onFloor)
         {
             Jump();
+        }*/
+
+        FlipPlayerDirection();
+        if (Input.GetKeyDown(KeyCode.Space) && onFloor)
+        {
+            Jump();
         }
+
+
     }
 
 
@@ -43,18 +56,29 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-        if (onFloor && horizontalInput == 0)
+        onFloor = Physics2D.OverlapCircle(groundCheck.position,checkRadius,whatIsGround);
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (horizontalInput != 0)
+        {
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+            animator.SetBool("isRunning", true);
+        }
+        else animator.SetBool("isRunning", false);
+
+        /*if (onFloor && horizontalInput == 0)
         {
             rb.velocity *= damping;
         }
         else if (onFloor)
         {
             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
-        }
+        }*/
     }
+
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce);
+        rb.velocity = Vector2.up * jumpForce;
     }
 
     private void FlipPlayerDirection()
@@ -70,12 +94,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        onFloor = true;
+        //onFloor = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        onFloor = false;
+        //onFloor = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
