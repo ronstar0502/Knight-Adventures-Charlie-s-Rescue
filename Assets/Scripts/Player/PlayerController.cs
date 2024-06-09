@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
-    private Animator animator;
-    private float horizontalInput;
-    private bool onFloor;
-    public int score;
     [SerializeField] private float health = 3;
     [SerializeField] private float moveSpeed, jumpForce;
     //[SerializeField] private float damping = 0.25f;
@@ -19,6 +13,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float checkRadius;
     [SerializeField] private LayerMask whatIsGround;
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator animator;
+    private float horizontalInput;
+    private bool onFloor;
+    public int score;
 
     private void Start()
     {
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Jump()
-    {
+    {       
         rb.velocity = Vector2.up * jumpForce;
     }
 
@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour
             sr.flipX = true;
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Collectable"))
