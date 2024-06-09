@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Collectable
   - MovingPlatform
+  - FallingPlatform
+  - DisapearingPlatform
   layers:
   - Default
   - TransparentFX

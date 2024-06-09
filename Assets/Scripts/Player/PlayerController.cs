@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public int score;
     [SerializeField] private float health = 3;
     [SerializeField] private float moveSpeed, jumpForce;
-    [SerializeField] private float damping = 0.25f;
+    //[SerializeField] private float damping = 0.25f;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float checkRadius;
@@ -91,15 +91,6 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = true;
         }
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        //onFloor = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //onFloor = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
