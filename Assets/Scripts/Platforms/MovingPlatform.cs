@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    [SerializeField] private float speed;
+    [SerializeField] private Transform pointA , pointB;
     private bool isPlayerOnPlatform;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {     
