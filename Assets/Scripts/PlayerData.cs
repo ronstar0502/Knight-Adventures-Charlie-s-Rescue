@@ -14,4 +14,6 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         PlayerPrefs.Save();
     }
+
+
 }

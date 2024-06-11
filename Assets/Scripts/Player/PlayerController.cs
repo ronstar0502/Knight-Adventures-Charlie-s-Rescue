@@ -98,8 +98,15 @@ public class PlayerController : MonoBehaviour
         {
             Coin coin = other.gameObject.GetComponent<Coin>();
             score += coin.GetValue();
+            SaveScoreData();
             Destroy(coin.gameObject);
         }
+    }
+
+    private void SaveScoreData()
+    {
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.Save();
     }
 
     public void TakeDamage(float damage)
@@ -117,6 +124,6 @@ public class PlayerController : MonoBehaviour
     }
     private void RestartLevel()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene(PlayerPrefs.GetString("last_level"));
     }
 }

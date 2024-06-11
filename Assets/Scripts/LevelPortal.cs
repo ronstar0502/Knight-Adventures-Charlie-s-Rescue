@@ -31,6 +31,7 @@ public class LevelPortal : MonoBehaviour
     public void SaveLasLevel(string level)
     {
         PlayerPrefs.SetString("last_level", level);
+        print(PlayerPrefs.GetString("last_level"));
         PlayerPrefs.Save();
     }
 }

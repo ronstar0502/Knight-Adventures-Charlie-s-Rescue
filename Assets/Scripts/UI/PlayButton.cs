@@ -17,7 +17,7 @@ public class PlayButton : MonoBehaviour
 
     private void LoadLastScene()
     {
-        string sceneToLoad = PlayerPrefs.GetString("score");
+        string sceneToLoad = PlayerPrefs.GetString("last_level");
 
         Scene scene = SceneManager.GetSceneByName(sceneToLoad);
         Scene lastScene = SceneManager.GetSceneByBuildIndex(SceneManager.sceneCountInBuildSettings - 1);
