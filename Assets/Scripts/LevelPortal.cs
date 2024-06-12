@@ -10,6 +10,7 @@ public class LevelPortal : MonoBehaviour
     void Start()
     {
         _currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        print("level build index: "+_currentLevelIndex);
         SaveLasLevel(SceneManager.GetActiveScene().name);
     }
 
@@ -23,6 +24,7 @@ public class LevelPortal : MonoBehaviour
             }
             else
             {
+                print(_currentLevelIndex+1);
                 SceneManager.LoadScene(_currentLevelIndex+1);
             }
         }
@@ -31,7 +33,7 @@ public class LevelPortal : MonoBehaviour
     public void SaveLasLevel(string level)
     {
         PlayerPrefs.SetString("last_level", level);
-        print(PlayerPrefs.GetString("last_level"));
+        print("last level name: "+PlayerPrefs.GetString("last_level"));
         PlayerPrefs.Save();
     }
 }

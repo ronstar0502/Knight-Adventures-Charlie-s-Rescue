@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        score = PlayerPrefs.GetInt("score");
 
     }
     private void Update()
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
     private void SaveScoreData()
     {
         PlayerPrefs.SetInt("score", score);
+        print("saved score: "+PlayerPrefs.GetInt("score"));
         PlayerPrefs.Save();
     }
 

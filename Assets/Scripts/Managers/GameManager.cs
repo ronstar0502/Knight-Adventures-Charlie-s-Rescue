@@ -13,8 +13,18 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
+    private void Start()
+    {
+        SetScoreText();
+    }
     void Update()
+    {
+        SetScoreText();
+    }
+
+    private void SetScoreText()
     {
         scoreText.text = $"Score: {player.score}";
     }
+
 }
