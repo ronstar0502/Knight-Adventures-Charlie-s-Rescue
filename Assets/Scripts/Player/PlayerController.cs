@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float health = 3;
+    [SerializeField] private int maxHealth = 3;
+    private int health;
     [SerializeField] private float moveSpeed, jumpForce;
     //[SerializeField] private float damping = 0.25f;
 
@@ -25,9 +26,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        SaveMaxHealthData();
         score = PlayerPrefs.GetInt("score");
+        health = PlayerPrefs.GetInt("health");
 
     }
+
+    
+
     private void Update()
     {
         /*horizontalInput = Input.GetAxis("Horizontal");
@@ -111,7 +117,20 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void TakeDamage(float damage)
+    private void SaveHealthData()
+    {
+        PlayerPrefs.SetInt("health",health);
+        print("health: "+PlayerPrefs.GetInt("health"));
+        PlayerPrefs.Save();
+    }
+
+    private void SaveMaxHealthData()
+    {
+        PlayerPrefs.SetInt("max_health", maxHealth);
+        PlayerPrefs.Save();
+    }
+
+    public void TakeDamage(int damage)
     {
         if (health - damage <= 0)
         {
@@ -121,11 +140,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             health-=damage;
+            SaveHealthData();
         }
         
     }
     private void RestartLevel()
     {
+        health = maxHealth;
+        SaveHealthData();
         SceneManager.LoadScene(PlayerPrefs.GetString("last_level"));
     }
 }
