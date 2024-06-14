@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2989219971900307882}
   - component: {fileID: 8385699658298145642}
   - component: {fileID: 1929906140887948850}
+  - component: {fileID: 2883632786517070985}
   - component: {fileID: 400232248035909813}
   m_Layer: 0
   m_Name: Player
@@ -173,8 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892125de79cbfe94b99b8e6ccddf129a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  health: 1
   moveSpeed: 5
   jumpForce: 6
   groundCheck: {fileID: 7254348356865850054}
@@ -182,6 +181,19 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &2883632786517070985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405377138115690778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017366169ef4a754caaa43dd3f9edae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!95 &400232248035909813
 Animator:
   serializedVersion: 5

@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3;
-    private int health;
     [SerializeField] private float moveSpeed, jumpForce;
     //[SerializeField] private float damping = 0.25f;
 
@@ -19,17 +17,12 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private float horizontalInput;
     private bool onFloor;
-    public int score;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        SaveMaxHealthData();
-        score = PlayerPrefs.GetInt("score");
-        health = PlayerPrefs.GetInt("health");
-
     }
 
     
@@ -98,56 +91,6 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = true;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Collectable"))
-        {
-            Coin coin = other.gameObject.GetComponent<Coin>();
-            score += coin.GetValue();
-            SaveScoreData();
-            Destroy(coin.gameObject);
-        }
-    }
-
-    private void SaveScoreData()
-    {
-        PlayerPrefs.SetInt("score", score);
-        print("saved score: "+PlayerPrefs.GetInt("score"));
-        PlayerPrefs.Save();
-    }
-
-    private void SaveHealthData()
-    {
-        PlayerPrefs.SetInt("health",health);
-        print("health: "+PlayerPrefs.GetInt("health"));
-        PlayerPrefs.Save();
-    }
-
-    private void SaveMaxHealthData()
-    {
-        PlayerPrefs.SetInt("max_health", maxHealth);
-        PlayerPrefs.Save();
-    }
-
-    public void TakeDamage(int damage)
-    {
-        if (health - damage <= 0)
-        {
-            health = 0;
-            RestartLevel();
-        }
-        else
-        {
-            health-=damage;
-            SaveHealthData();
-        }
-        
-    }
-    private void RestartLevel()
-    {
-        health = maxHealth;
-        SaveHealthData();
-        SceneManager.LoadScene(PlayerPrefs.GetString("last_level"));
-    }
+    }   
+    
 }

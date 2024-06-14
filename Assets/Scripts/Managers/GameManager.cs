@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText;
-    private PlayerController player;
+    [SerializeField] private TMP_Text coinsText;
+    private PlayerData player;
 
     private void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<PlayerData>();
     }
 
     private void Start()
@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour
 
     private void SetScoreText()
     {
-        scoreText.text = $"Score: {player.score}";
+        int coins = PlayerPrefs.GetInt("coins");
+        int coinsTarget = FindObjectOfType<LevelPortal>().GetTotalCoinsInLevel();
+        print
+        coinsText.text = $"Coins: {coins}  /  {coinsTarget}";
     }
 
 }

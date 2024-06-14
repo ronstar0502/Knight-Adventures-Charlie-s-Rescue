@@ -8,8 +8,8 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            player.TakeDamage(1);
+            PlayerData playerData = other.gameObject.GetComponent<PlayerData>();
+            playerData.TakeDamage(5);
         }
     }
 }
