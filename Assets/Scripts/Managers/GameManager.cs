@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text coinsText;
+    [SerializeField] private Transform playerStart;
     private PlayerData player;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        player.SetStartingLevelPosition(playerStart.position);
         SetScoreText();
     }
     void Update()

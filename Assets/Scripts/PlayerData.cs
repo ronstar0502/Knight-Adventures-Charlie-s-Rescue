@@ -67,4 +67,9 @@ public class PlayerData : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetString("last_level"));
     }
 
+    public void SetStartingLevelPosition(Vector2 position)
+    {
+        transform.position = position;
+    }
+
 }
