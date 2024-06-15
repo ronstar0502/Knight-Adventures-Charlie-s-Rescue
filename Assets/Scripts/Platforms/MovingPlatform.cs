@@ -5,7 +5,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform platfrom,startPoint , endPoint;
     private int direction = 1;
-    private bool isPlayerOnPlatform;
+    //private bool isPlayerOnPlatform;
 
     private void Update()
     {
@@ -48,7 +48,7 @@ public class MovingPlatform : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             print("Player on Platform");
-            isPlayerOnPlatform = true;
+            //isPlayerOnPlatform = true;
             collision.gameObject.transform.SetParent(gameObject.transform);
         }
     }
@@ -56,7 +56,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         print("Player off Platform");
-        isPlayerOnPlatform = false;
+        //isPlayerOnPlatform = false;
         collision.gameObject.transform.SetParent(null);
     }
 }

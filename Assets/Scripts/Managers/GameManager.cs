@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     {
         int coins = PlayerPrefs.GetInt("coins");
         int coinsTarget = FindObjectOfType<LevelPortal>().GetTotalCoinsInLevel();
-        print
         coinsText.text = $"Coins: {coins}  /  {coinsTarget}";
     }
 

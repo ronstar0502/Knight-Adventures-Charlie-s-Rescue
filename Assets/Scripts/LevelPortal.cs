@@ -15,7 +15,7 @@ public class LevelPortal : MonoBehaviour
     void Start()
     {
         _currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        SaveLasLevel(SceneManager.GetActiveScene().name);
+        SaveLastLevel(SceneManager.GetActiveScene().name);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +26,7 @@ public class LevelPortal : MonoBehaviour
             if (_currentLevelIndex == SceneManager.sceneCountInBuildSettings - 1)
             {
                 SceneManager.LoadScene(0);
+                PlayerPrefs.DeleteAll();
             }
             else
             {
@@ -40,7 +41,7 @@ public class LevelPortal : MonoBehaviour
         }
     }
 
-    public void SaveLasLevel(string level)
+    public void SaveLastLevel(string level)
     {
         PlayerPrefs.SetString("last_level", level);
         PlayerPrefs.Save();
