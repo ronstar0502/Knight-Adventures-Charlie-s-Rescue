@@ -4,14 +4,21 @@ using UnityEngine.SceneManagement;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    private int _coins;
+    private Vector2 startingCheckpoint;
     private int _health;
+    private int _startingLevelHealth;
+    private int _coins;
+    public bool isDead;
 
     private void Start()
     {
+        SetPlayerPosition();
         _coins = PlayerPrefs.GetInt("coins");
-        _health = PlayerPrefs.GetInt("health");
+        _startingLevelHealth = PlayerPrefs.GetInt("health");
+        _health = _startingLevelHealth;
         SaveMaxHealthData();
+        isDead = false;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,26 +57,29 @@ public class PlayerData : MonoBehaviour
         if (_health - damage <= 0)
         {
             _health = 0;
-            RestartLevel();
+            isDead = true;
         }
         else
         {
+            SetPlayerPosition();
             _health -= damage;
             SaveHealthData();
         }
 
     }
-
-    private void RestartLevel()
+    private void SetPlayerPosition()
     {
-        _health = maxHealth;
-        SaveHealthData();
-        SceneManager.LoadScene(PlayerPrefs.GetString("last_level"));
+        transform.position = startingCheckpoint;
     }
 
     public void SetStartingLevelPosition(Vector2 position)
     {
-        transform.position = position;
+        startingCheckpoint = position;
+    }
+    public void RestartLevel()
+    {
+        _health = _startingLevelHealth;
+        SaveHealthData();
     }
 
 }

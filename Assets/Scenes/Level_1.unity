@@ -6875,6 +6875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsText: {fileID: 881068488}
   playerStart: {fileID: 1885861656}
+  defeatPanel: {fileID: 881068489}
 --- !u!4 &527452042
 Transform:
   m_ObjectHideFlags: 0
@@ -7150,6 +7151,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &881068489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2697063886934025354, guid: 5f2c20d42276d78408d59b3dd7c81784, type: 3}
+  m_PrefabInstance: {fileID: 881068487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &881068490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3845469140833043878, guid: 5f2c20d42276d78408d59b3dd7c81784, type: 3}
+  m_PrefabInstance: {fileID: 881068487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1060998839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10044,6 +10055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelPortal
       objectReference: {fileID: 0}
+    - target: {fileID: 4205208887230926397, guid: 673ad021e83e91942a133b21f1c326cc, type: 3}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 881068490}
     - target: {fileID: 6491240270270989158, guid: 673ad021e83e91942a133b21f1c326cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.59

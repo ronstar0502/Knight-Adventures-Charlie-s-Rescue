@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text coinsText;
     [SerializeField] private Transform playerStart;
+    [SerializeField] private GameObject defeatPanel;
     private PlayerData player;
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerData>();
+        defeatPanel.SetActive(false);
     }
 
     private void Start()
@@ -22,6 +24,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         SetScoreText();
+        if (player.isDead)
+        {
+            defeatPanel.SetActive(true);
+        }
     }
 
     private void SetScoreText()

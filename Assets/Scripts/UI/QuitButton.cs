@@ -11,7 +11,7 @@ public class QuitButton : MonoBehaviour
         bt.onClick.AddListener(QuitGame);
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

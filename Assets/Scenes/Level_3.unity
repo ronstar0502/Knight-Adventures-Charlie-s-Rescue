@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelPortal
       objectReference: {fileID: 0}
+    - target: {fileID: 4205208887230926397, guid: 673ad021e83e91942a133b21f1c326cc, type: 3}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 1868655472}
     - target: {fileID: 6491240270270989158, guid: 673ad021e83e91942a133b21f1c326cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.08
@@ -480,6 +484,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 673ad021e83e91942a133b21f1c326cc, type: 3}
+--- !u!1 &411158224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2697063886934025354, guid: 5f2c20d42276d78408d59b3dd7c81784, type: 3}
+  m_PrefabInstance: {fileID: 1280440744375412675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &417541136
 GameObject:
   m_ObjectHideFlags: 0
@@ -8371,6 +8380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsText: {fileID: 332010886}
   playerStart: {fileID: 1813342148}
+  defeatPanel: {fileID: 411158224}
 --- !u!4 &1331850693
 Transform:
   m_ObjectHideFlags: 0
@@ -8691,6 +8701,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1868655472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3845469140833043878, guid: 5f2c20d42276d78408d59b3dd7c81784, type: 3}
+  m_PrefabInstance: {fileID: 1280440744375412675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1883418866
 GameObject:
   m_ObjectHideFlags: 0
