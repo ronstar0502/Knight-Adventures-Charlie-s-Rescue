@@ -29,6 +29,7 @@ public class PlayerData : MonoBehaviour
             _coins += coin.GetValue();
             SaveCoinsData();
             Destroy(coin.gameObject);
+            FindObjectOfType<LevelPortalManager>().CheckIsLevelComplete();
         }
     }
 

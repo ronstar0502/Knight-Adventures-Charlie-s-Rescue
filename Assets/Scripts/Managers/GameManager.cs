@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     private void SetScoreText()
     {
         int coins = PlayerPrefs.GetInt("coins");
-        int coinsTarget = FindObjectOfType<LevelPortal>().GetTotalCoinsInLevel();
+        int coinsTarget = FindObjectOfType<LevelPortalManager>().GetTotalCoinsInLevel();
         coinsText.text = $"Coins: {coins}  /  {coinsTarget}";
     }
 
