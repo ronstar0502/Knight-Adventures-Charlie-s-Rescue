@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 329717897125174185}
   - component: {fileID: 7452151288899689839}
   - component: {fileID: 3205570898078457546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,9 +230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 606066930419349544}
   - component: {fileID: 1138331399999180867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingPlatform
-  m_TagString: Untagged
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,6 +268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  platfrom: {fileID: 3332636463514855288}
+  platform: {fileID: 3332636463514855288}
   startPoint: {fileID: 1522452496507336602}
   endPoint: {fileID: 2848088045649741489}

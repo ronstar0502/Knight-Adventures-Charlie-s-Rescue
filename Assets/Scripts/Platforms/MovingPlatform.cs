@@ -3,9 +3,8 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Transform platfrom,startPoint , endPoint;
+    [SerializeField] private Transform platform,startPoint , endPoint;
     private int direction = 1;
-    //private bool isPlayerOnPlatform;
 
     private void Update()
     {
@@ -15,13 +14,14 @@ public class MovingPlatform : MonoBehaviour
     private void PlatformMovement()
     {
         Vector2 targetPosition = SetNextPoint();
-        platfrom.position = Vector2.MoveTowards(platfrom.position, targetPosition,speed*Time.deltaTime);  
-        float distance = (targetPosition - (Vector2)platfrom.position).magnitude;
+        platform.position = Vector2.MoveTowards(platform.position, targetPosition,speed*Time.deltaTime);  
+        float distance = (targetPosition - (Vector2)platform.position).magnitude;
 
         if (distance < 0.1f)
         {
             direction *= -1;
         }
+
     }
 
     private Vector2 SetNextPoint()
@@ -39,24 +39,26 @@ public class MovingPlatform : MonoBehaviour
     {
         if(startPoint!=null && endPoint != null)
         {
-            Gizmos.DrawLine(platfrom.position,startPoint.position);
-            Gizmos.DrawLine(platfrom.position,endPoint.position);
+            Gizmos.DrawLine(platform.position,startPoint.position);
+            Gizmos.DrawLine(platform.position,endPoint.position);
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
-    {     
-        if(collision.gameObject.CompareTag("Player"))
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
             print("Player on Platform");
-            //isPlayerOnPlatform = true;
-            collision.gameObject.transform.SetParent(gameObject.transform);
+            collision.gameObject.transform.SetParent(platform);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        print("Player off Platform");
-        //isPlayerOnPlatform = false;
-        collision.gameObject.transform.SetParent(null);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            print("Player off Platform");
+            collision.gameObject.transform.SetParent(null);
+        }
     }
 }

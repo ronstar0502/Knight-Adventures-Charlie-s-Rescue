@@ -7,14 +7,13 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, jumpForce;
-    //[SerializeField] private float damping = 0.25f;
-
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float checkRadius;
     [SerializeField] private LayerMask whatIsGround;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
+    private MovingPlatform currentPlatform;
     private float horizontalInput;
     private bool onFloor;
 
@@ -24,8 +23,6 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
-
-    
 
     private void Update()
     {
@@ -44,8 +41,6 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-
-
     }
 
 
@@ -65,15 +60,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", true);
         }
         else animator.SetBool("isRunning", false);
-
-        /*if (onFloor && horizontalInput == 0)
-        {
-            rb.velocity *= damping;
-        }
-        else if (onFloor)
-        {
-            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
-        }*/
     }
 
     private void Jump()
@@ -91,6 +77,5 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = true;
         }
-    }   
-    
+    }
 }
