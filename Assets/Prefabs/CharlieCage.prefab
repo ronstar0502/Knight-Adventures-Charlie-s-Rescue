@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1.225, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4094135700657407668}
+  - {fileID: 3513677969442061748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4856994420615229668
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad709df7d33fc7642bb03893b76fdd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &6162278225211193785
+--- !u!1001 &2723335785306947045
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,69 +152,65 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3364543822928588949}
     m_Modifications:
-    - target: {fileID: -2253911629886400664, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
-      propertyPath: m_Name
-      value: charlieTheCapybara
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8325
+      value: 0.52244896
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9375
+      value: 0.56
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.067
+      value: 0.084
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.258
+      value: -0.504
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
+    - target: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844508963403018183, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
+      propertyPath: m_Name
+      value: Charlie_TheCapybara
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: -8435245712485981826, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
---- !u!4 &4094135700657407668 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
+--- !u!4 &3513677969442061748 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 23d54486817bd9c42ae6daadb3f2245c, type: 3}
-  m_PrefabInstance: {fileID: 6162278225211193785}
+  m_CorrespondingSourceObject: {fileID: 1515509691522859089, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
+  m_PrefabInstance: {fileID: 2723335785306947045}
   m_PrefabAsset: {fileID: 0}
