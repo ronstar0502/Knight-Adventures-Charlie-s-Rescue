@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1610372172275268334, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3844508963403018183, guid: 01a2f7f65f4e19c4c95bfaf14eff2f40, type: 3}
       propertyPath: m_Name
       value: Charlie_TheCapybara
