@@ -86,6 +86,11 @@ public class PlayerData : MonoBehaviour
     {
         startingCheckpoint = position;
     }
+    
+    public Vector2 GetPlayerStartPosition()
+    {
+        return startingCheckpoint;
+    }
     public void RestartLevel()
     {
         _health = maxHealth;

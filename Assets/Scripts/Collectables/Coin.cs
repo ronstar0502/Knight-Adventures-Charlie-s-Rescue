@@ -7,6 +7,6 @@ public class Coin : MonoBehaviour
     [SerializeField] private int value;
     public int GetValue()
     {
-        return value;
+        return value;      
     }
 }

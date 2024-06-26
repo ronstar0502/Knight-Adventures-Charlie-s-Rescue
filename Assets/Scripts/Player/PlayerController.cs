@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
-    private MovingPlatform currentPlatform;
     private float horizontalInput;
     private bool onFloor;
 

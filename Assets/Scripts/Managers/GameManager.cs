@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         player = FindObjectOfType<PlayerData>();
+        player.SetStartingLevelPosition(playerStart.position);
         defeatPanel.SetActive(false);
     }
 
     private void Start()
     {
-        player.SetStartingLevelPosition(playerStart.position);
         SetScoreText();
     }
     void Update()
