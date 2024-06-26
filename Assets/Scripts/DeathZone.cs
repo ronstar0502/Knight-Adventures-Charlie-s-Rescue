@@ -11,5 +11,9 @@ public class DeathZone : MonoBehaviour
             PlayerData playerData = other.gameObject.GetComponent<PlayerData>();
             playerData.TakeDamage(5);
         }
+        if (other.gameObject.CompareTag("Fireball"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

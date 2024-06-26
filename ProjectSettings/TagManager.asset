@@ -8,6 +8,7 @@ TagManager:
   - MovingPlatform
   - FallingPlatform
   - DisapearingPlatform
+  - Fireball
   layers:
   - Default
   - TransparentFX
