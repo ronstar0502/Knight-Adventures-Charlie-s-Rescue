@@ -6,16 +6,18 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int maxHealth;
     private Vector2 startingCheckpoint;
     private int _health;
-    private int _startingLevelHealth;
     private int _coins;
     public bool isDead;
 
+    private void Awake()
+    {
+        SaveMaxHealthData();
+    }
     private void Start()
     {
         SetPlayerPosition();
         _coins = PlayerPrefs.GetInt("coins");
-        _startingLevelHealth = PlayerPrefs.GetInt("health");
-        _health = _startingLevelHealth;
+        _health = maxHealth;
         SaveMaxHealthData();
         isDead = false;
 
@@ -33,6 +35,15 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    public int GetHealth()
+    {
+        return _health;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
     private void SaveCoinsData()
     {
         PlayerPrefs.SetInt("coins", _coins);
@@ -62,11 +73,9 @@ public class PlayerData : MonoBehaviour
         }
         else
         {
-            SetPlayerPosition();
             _health -= damage;
             SaveHealthData();
         }
-
     }
     private void SetPlayerPosition()
     {
@@ -79,7 +88,7 @@ public class PlayerData : MonoBehaviour
     }
     public void RestartLevel()
     {
-        _health = _startingLevelHealth;
+        _health = maxHealth;
         SaveHealthData();
     }
 
