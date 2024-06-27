@@ -18,8 +18,8 @@ public class PlayerData : MonoBehaviour
         SetPlayerPosition();
         _coins = PlayerPrefs.GetInt("coins");
         SaveCoinsData();
-        _health = maxHealth;
-        SaveMaxHealthData();
+        _health = PlayerPrefs.GetInt("health");
+        SaveHealthData();
         isDead = false;
 
     }
@@ -45,7 +45,7 @@ public class PlayerData : MonoBehaviour
     {
         return maxHealth;
     }
-    private void SaveCoinsData()
+    public void SaveCoinsData()
     {
         PlayerPrefs.SetInt("coins", _coins);
         print("saved coins: " + PlayerPrefs.GetInt("coins"));

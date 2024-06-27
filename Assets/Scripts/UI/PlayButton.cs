@@ -25,10 +25,9 @@ public class PlayButton : MonoBehaviour
         int sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/" + sceneToLoad + ".unity"); //finding the scene build index from the path of the scene
         int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
         print(sceneIndex+"/"+lastSceneIndex);
-        
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("score", 0);
-        int maxHealth = PlayerPrefs.GetInt("max_health");
-        PlayerPrefs.SetInt("health", maxHealth);
+        FindObjectOfType<PlayerData>().SaveCoinsData();
         if (sceneIndex == lastSceneIndex)
         {
             SceneManager.LoadScene("Level_1");
