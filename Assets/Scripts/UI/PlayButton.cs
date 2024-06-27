@@ -25,15 +25,15 @@ public class PlayButton : MonoBehaviour
         int sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/" + sceneToLoad + ".unity"); //finding the scene build index from the path of the scene
         int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
         print(sceneIndex+"/"+lastSceneIndex);
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("score", 0);
-        FindObjectOfType<PlayerData>().SaveCoinsData();
         if (sceneIndex == lastSceneIndex)
         {
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Level_1");
         }
         else
         {
+            PlayerPrefs.SetInt("score", 0);
+            FindObjectOfType<PlayerData>().SaveCoinsData(0);
             SceneManager.LoadScene(sceneToLoad);
         }
     }

@@ -17,8 +17,8 @@ public class PlayerData : MonoBehaviour
     {
         SetPlayerPosition();
         _coins = PlayerPrefs.GetInt("coins");
-        SaveCoinsData();
-        _health = PlayerPrefs.GetInt("health");
+        SaveCoinsData(_coins);
+        _health = maxHealth;
         SaveHealthData();
         isDead = false;
 
@@ -30,7 +30,7 @@ public class PlayerData : MonoBehaviour
         {
             Coin coin = other.gameObject.GetComponent<Coin>();
             _coins += coin.GetValue();
-            SaveCoinsData();
+            SaveCoinsData(_coins);
             Destroy(coin.gameObject);
             FindObjectOfType<LevelPortalManager>().CheckIsLevelComplete();
         }
@@ -45,9 +45,9 @@ public class PlayerData : MonoBehaviour
     {
         return maxHealth;
     }
-    public void SaveCoinsData()
+    public void SaveCoinsData(int amount)
     {
-        PlayerPrefs.SetInt("coins", _coins);
+        PlayerPrefs.SetInt("coins", amount);
         print("saved coins: " + PlayerPrefs.GetInt("coins"));
         PlayerPrefs.Save();
     }

@@ -25,7 +25,7 @@ public class LevelPortal : MonoBehaviour
             {
                 print(_currentLevelIndex + 1);
                 PlayerPrefs.SetInt("coins",0);
-                FindObjectOfType<PlayerData>().SaveCoinsData();
+                FindObjectOfType<PlayerData>().SaveCoinsData(0);
                 SceneManager.LoadScene(_currentLevelIndex + 1);
             }
         }
