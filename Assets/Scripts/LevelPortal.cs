@@ -9,8 +9,8 @@ public class LevelPortal : MonoBehaviour
     void Start()
     {
         _currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        SaveLastLevel(SceneManager.GetActiveScene().name);
-    }    
+        print("active scene index: " + _currentLevelIndex);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {      
@@ -25,15 +25,12 @@ public class LevelPortal : MonoBehaviour
             {
                 print(_currentLevelIndex + 1);
                 PlayerPrefs.SetInt("coins",0);
-                FindObjectOfType<PlayerData>().SaveCoinsData(0);
+                PlayerPrefs.Save();
+                print("coins: " + PlayerPrefs.GetInt("coins"));
                 SceneManager.LoadScene(_currentLevelIndex + 1);
             }
         }
     }
 
-    public void SaveLastLevel(string level)
-    {
-        PlayerPrefs.SetString("last_level", level);
-        PlayerPrefs.Save();
-    }    
+    
 }
