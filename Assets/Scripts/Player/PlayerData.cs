@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
     {
         SetPlayerPosition();
         _coins = PlayerPrefs.GetInt("coins");
+        SaveCoinsData();
         _health = maxHealth;
         SaveMaxHealthData();
         isDead = false;

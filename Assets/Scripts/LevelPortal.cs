@@ -23,13 +23,10 @@ public class LevelPortal : MonoBehaviour
             }
             else
             {
-                print(_currentLevelIndex + 1);                
+                print(_currentLevelIndex + 1);
+                PlayerPrefs.SetInt("coins",0);
                 SceneManager.LoadScene(_currentLevelIndex + 1);
             }
-        }
-        else
-        {
-            print("go get the other coins before going to next level");
         }
     }
 

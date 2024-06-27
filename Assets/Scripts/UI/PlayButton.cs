@@ -26,11 +26,11 @@ public class PlayButton : MonoBehaviour
         int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
         print(sceneIndex+"/"+lastSceneIndex);
         
+        PlayerPrefs.SetInt("score", 0);
+        int maxHealth = PlayerPrefs.GetInt("max_health");
+        PlayerPrefs.SetInt("health", maxHealth);
         if (sceneIndex == lastSceneIndex)
         {
-            PlayerPrefs.SetInt("score", 0);
-            int maxHealth = PlayerPrefs.GetInt("max_health");
-            PlayerPrefs.SetInt("health", maxHealth);
             SceneManager.LoadScene("Level_1");
         }
         else
