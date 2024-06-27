@@ -12,14 +12,14 @@ public class LevelPortalManager : MonoBehaviour
     private void Awake()
     {
         victoryPanel.SetActive(false);
+        PlayerPrefs.SetInt("coins", 0);
+        PlayerPrefs.SetString("isLevelComplete", "No");
+        PlayerPrefs.Save();
     }
     private void Start()
     {
         LevelNameInit();
         _totalCoinsInLevel = GameObject.FindGameObjectsWithTag("Collectable");
-        PlayerPrefs.SetInt("coins", 0);
-        PlayerPrefs.SetString("isLevelComplete", "No");
-        PlayerPrefs.Save();
     }
 
     private void LevelNameInit()
