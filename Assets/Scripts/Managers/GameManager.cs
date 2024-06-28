@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         SetScoreText();
-        if (player.isDead)
+        if (player.isDead && !defeatPanel.activeInHierarchy)
         {
             defeatPanel.SetActive(true);
         }

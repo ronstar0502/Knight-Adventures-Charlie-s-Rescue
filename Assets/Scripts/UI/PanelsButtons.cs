@@ -11,10 +11,13 @@ public class PanelsButtons : MonoBehaviour
     }
     public void RestartLevel()
     {
-        //PlayerData playerData = FindObjectOfType<PlayerData>();
-        //playerData.RestartLevel();
         string currentLevelName = PlayerPrefs.GetString("last_level");
         print("current level reload: "+currentLevelName);
         SceneManager.LoadScene(currentLevelName);
+    }
+
+    private void OnMouseEnter()
+    {
+        print("hello click");
     }
 }
