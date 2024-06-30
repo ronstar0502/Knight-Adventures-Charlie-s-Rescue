@@ -19,6 +19,10 @@ Charlie's Rescue is a fun and engaging 2D platformer developed in Unity. Travers
 - Beautiful 2D graphics
 - Engaging gameplay
 
+## Gameplay Video
+Check out the gameplay video on YouTube:
+
+[![Charlie's Rescue Gameplay](https://i9.ytimg.com/vi/tbgiEwb2O7E/mqdefault.jpg?v=66812c79&sqp=CMzbhLQG&rs=AOn4CLDtfeTz2wmQv1cn0urI4fGDJY_ONA)](https://www.youtube.com/watch?v=tbgiEwb2O7E)
 
 ## Screenshots
 Here are some screenshots of the game:
@@ -30,9 +34,6 @@ Here are some screenshots of the game:
 ![KnightAdventuresCharlieVictory](https://github.com/ronstar0502/Knight-Adventures-Charlie/assets/102975645/3e7ae395-fc4d-49b3-97f9-27f6262696f0)
 
 
-## Gameplay Video
-Check out the gameplay video on YouTube:
-[![Charlie's Rescue Gameplay](https://i9.ytimg.com/vi/tbgiEwb2O7E/mqdefault.jpg?v=66812c79&sqp=CMzbhLQG&rs=AOn4CLDtfeTz2wmQv1cn0urI4fGDJY_ONA)](https://www.youtube.com/watch?v=tbgiEwb2O7E)
 
 
 ## Download
